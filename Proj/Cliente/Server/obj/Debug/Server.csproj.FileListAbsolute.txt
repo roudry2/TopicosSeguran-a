@@ -9,3 +9,6 @@ C:\Users\roudry2\Desktop\CTEsP\GIT\TopicosSeguran-a\Proj\Cliente\Server\obj\Debu
 C:\Users\roudry2\Desktop\CTEsP\GIT\TopicosSeguran-a\Proj\Cliente\Server\bin\Debug\Server.exe
 C:\Users\roudry2\Desktop\CTEsP\GIT\TopicosSeguran-a\Proj\Cliente\Server\bin\Debug\Server.pdb
 C:\Users\roudry2\Desktop\CTEsP\GIT\TopicosSeguran-a\Proj\Cliente\Server\obj\Debug\Server.csprojResolveAssemblyReference.cache
+C:\Users\Miguel\Documents\GitHub\TopicosSeguran-a\TopicosSeguran-a\Proj\Cliente\Server\bin\Debug\Server.exe.config
+C:\Users\Miguel\Documents\GitHub\TopicosSeguran-a\TopicosSeguran-a\Proj\Cliente\Server\obj\Debug\Server.exe
+C:\Users\Miguel\Documents\GitHub\TopicosSeguran-a\TopicosSeguran-a\Proj\Cliente\Server\obj\Debug\Server.pdb
