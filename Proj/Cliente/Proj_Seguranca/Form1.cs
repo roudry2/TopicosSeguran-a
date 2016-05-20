@@ -46,7 +46,7 @@ namespace Proj_Seguranca
                 else
                 {
                     String message = txtNome.Text;
-
+                    panel_Status.BackColor = Color.Green;
 
 
                     int port = 1000;

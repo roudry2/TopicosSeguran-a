@@ -101,6 +101,7 @@
             // 
             // panel_Status
             // 
+            this.panel_Status.BackColor = System.Drawing.Color.Red;
             this.panel_Status.Location = new System.Drawing.Point(50, 8);
             this.panel_Status.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel_Status.Name = "panel_Status";
