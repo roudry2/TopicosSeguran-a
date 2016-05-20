@@ -39,10 +39,16 @@ namespace Proj_Seguranca
             // Conectar
             try
             {
-                String message = txtNome.Text;
+                if (txtNome.Text == "")
+                {
+                    MessageBox.Show("Tem de preencher com  NOME");
+                }
+                else
+                {
+                    String message = txtNome.Text;
 
 
-                
+
                     int port = 1000;
                     TcpClient cliente = new TcpClient(GetLocalIPAddress(), port);
                     Byte[] data = Encoding.ASCII.GetBytes(message);
@@ -63,6 +69,9 @@ namespace Proj_Seguranca
 
                     stream.Close();
                     cliente.Close();
+                }
+
+                
 
             }
             catch (SocketException r)
