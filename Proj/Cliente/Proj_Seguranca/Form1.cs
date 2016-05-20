@@ -33,7 +33,7 @@ namespace Proj_Seguranca
 
                 
                     int port = 1000;
-                    TcpClient cliente = new TcpClient("172.22.216.237", port);
+                    TcpClient cliente = new TcpClient("172.22.208.246", port);
                     Byte[] data = Encoding.ASCII.GetBytes(message);
 
                     NetworkStream stream = cliente.GetStream();
