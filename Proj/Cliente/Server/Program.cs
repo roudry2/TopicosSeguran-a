@@ -10,6 +10,18 @@ namespace Server
 {
     class Program
     {
+        public static string GetLocalIPAddress()
+        {
+            var host = Dns.GetHostEntry(Dns.GetHostName());
+            foreach (var ip in host.AddressList)
+            {
+                if (ip.AddressFamily == AddressFamily.InterNetwork)
+                {
+                    return ip.ToString();
+                }
+            }
+            throw new Exception("Local IP Address Not Found!");
+        }
         static void Main(string[] args)
         {
 
@@ -17,7 +29,7 @@ namespace Server
             try
             {
                 int port = 1000;
-                IPAddress localAddr = IPAddress.Parse("172.22.208.246");
+                IPAddress localAddr = IPAddress.Parse(GetLocalIPAddress());
                 server = new TcpListener(localAddr, port);
                 server.Start();
 

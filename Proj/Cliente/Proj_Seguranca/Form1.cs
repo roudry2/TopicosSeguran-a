@@ -17,7 +17,18 @@ namespace Proj_Seguranca
     {
 
         RSACryptoServiceProvider rsa;
-
+        public static string GetLocalIPAddress()
+        {
+            var host = Dns.GetHostEntry(Dns.GetHostName());
+            foreach (var ip in host.AddressList)
+            {
+                if (ip.AddressFamily == AddressFamily.InterNetwork)
+                {
+                    return ip.ToString();
+                }
+            }
+            throw new Exception("Local IP Address Not Found!");
+        }
         public Form1()
         {
             InitializeComponent();
@@ -33,7 +44,7 @@ namespace Proj_Seguranca
 
                 
                     int port = 1000;
-                    TcpClient cliente = new TcpClient("172.22.208.246", port);
+                    TcpClient cliente = new TcpClient(GetLocalIPAddress(), port);
                     Byte[] data = Encoding.ASCII.GetBytes(message);
 
                     NetworkStream stream = cliente.GetStream();
@@ -76,6 +87,9 @@ namespace Proj_Seguranca
             txtChavePublica.Text = privatePublicPair;
         }
 
+        private void Form1_Load(object sender, EventArgs e)
+        {
 
+        }
     }
 }
