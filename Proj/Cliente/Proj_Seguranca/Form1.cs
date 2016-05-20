@@ -17,7 +17,18 @@ namespace Proj_Seguranca
     {
 
         RSACryptoServiceProvider rsa;
-
+        public static string GetLocalIPAddress()
+        {
+            var host = Dns.GetHostEntry(Dns.GetHostName());
+            foreach (var ip in host.AddressList)
+            {
+                if (ip.AddressFamily == AddressFamily.InterNetwork)
+                {
+                    return ip.ToString();
+                }
+            }
+            throw new Exception("Local IP Address Not Found!");
+        }
         public Form1()
         {
             InitializeComponent();
@@ -32,26 +43,26 @@ namespace Proj_Seguranca
 
 
                 
-                int port = 1000;
-                TcpClient cliente = new TcpClient("172.22.209.196", port);
-                Byte[] data = Encoding.ASCII.GetBytes(message);
+                    int port = 1000;
+                    TcpClient cliente = new TcpClient(GetLocalIPAddress(), port);
+                    Byte[] data = Encoding.ASCII.GetBytes(message);
 
-                NetworkStream stream = cliente.GetStream();
+                    NetworkStream stream = cliente.GetStream();
 
-                stream.Write(data, 0, data.Length);
-                MessageBox.Show("Enviado:" + message);
-                data = new Byte[256];
+                    stream.Write(data, 0, data.Length);
+                    MessageBox.Show("Enviado:" + message);
+                    data = new Byte[256];
 
-                //String para guardar a resposta do ASCII
-                String responseData = String.Empty;
+                    //String para guardar a resposta do ASCII
+                    String responseData = String.Empty;
 
-                //Ler a primeira resposta do TcpServer em bytes
-                Int32 bytes = stream.Read(data, 0, data.Length);
-                responseData = Encoding.ASCII.GetString(data, 0, bytes);
+                    //Ler a primeira resposta do TcpServer em bytes
+                    Int32 bytes = stream.Read(data, 0, data.Length);
+                    responseData = Encoding.ASCII.GetString(data, 0, bytes);
 
 
-                stream.Close();
-                cliente.Close();
+                    stream.Close();
+                    cliente.Close();
 
             }
             catch (SocketException r)
@@ -77,4 +88,5 @@ namespace Proj_Seguranca
         }
 
     }
+}
 }
