@@ -25,3 +25,12 @@ C:\Users\Miguel\Documents\GitHub\TopicosSeguran-a\TopicosSeguran-a\Proj\Cliente\
 C:\Users\Miguel\Documents\GitHub\TopicosSeguran-a\TopicosSeguran-a\Proj\Cliente\Proj_Seguranca\obj\Debug\Proj_Seguranca.Form1.resources
 C:\Users\Miguel\Documents\GitHub\TopicosSeguran-a\TopicosSeguran-a\Proj\Cliente\Proj_Seguranca\obj\Debug\Proj_Seguranca.Properties.Resources.resources
 C:\Users\Miguel\Documents\GitHub\TopicosSeguran-a\TopicosSeguran-a\Proj\Cliente\Proj_Seguranca\obj\Debug\Cliente.csproj.GenerateResource.Cache
+C:\Users\Eugénia Campos\Desktop\FDS\TopicosSeguran-a\Proj\Cliente\Proj_Seguranca\bin\Debug\Proj_Seguranca.exe.config
+C:\Users\Eugénia Campos\Desktop\FDS\TopicosSeguran-a\Proj\Cliente\Proj_Seguranca\obj\Debug\Proj_Seguranca.exe
+C:\Users\Eugénia Campos\Desktop\FDS\TopicosSeguran-a\Proj\Cliente\Proj_Seguranca\obj\Debug\Proj_Seguranca.pdb
+C:\Users\Eugénia Campos\Desktop\FDS\TopicosSeguran-a\Proj\Cliente\Proj_Seguranca\bin\Debug\Proj_Seguranca.exe
+C:\Users\Eugénia Campos\Desktop\FDS\TopicosSeguran-a\Proj\Cliente\Proj_Seguranca\bin\Debug\Proj_Seguranca.pdb
+C:\Users\Eugénia Campos\Desktop\FDS\TopicosSeguran-a\Proj\Cliente\Proj_Seguranca\obj\Debug\Cliente.csprojResolveAssemblyReference.cache
+C:\Users\Eugénia Campos\Desktop\FDS\TopicosSeguran-a\Proj\Cliente\Proj_Seguranca\obj\Debug\Proj_Seguranca.Form1.resources
+C:\Users\Eugénia Campos\Desktop\FDS\TopicosSeguran-a\Proj\Cliente\Proj_Seguranca\obj\Debug\Proj_Seguranca.Properties.Resources.resources
+C:\Users\Eugénia Campos\Desktop\FDS\TopicosSeguran-a\Proj\Cliente\Proj_Seguranca\obj\Debug\Cliente.csproj.GenerateResource.Cache

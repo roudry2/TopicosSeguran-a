@@ -36,18 +36,20 @@ namespace Server
                 //Buffer para ler dados
                 Byte[] bytes = new Byte[256];
 
-
+                Console.Write("A espera de uma coneccao...");
                 TcpClient cliente = server.AcceptTcpClient();
                 NetworkStream stream = cliente.GetStream();
                 int i = stream.Read(bytes, 0, bytes.Length);
                 string data = Encoding.ASCII.GetString(bytes, 0, i);
+                stream.Write(bytes, 0, bytes.Length);
+
 
                 //Loop para verificar a conecção
                 while (true)
                 {
-                    Console.Write("A espera de uma coneccao...");
+                    
                     Console.Clear();
-                    Console.WriteLine("Cliente: " + data + "\nConectado!");
+                    Console.WriteLine("Cliente: " + data);
                     
                     
 
@@ -68,8 +70,9 @@ namespace Server
 
 
                     }
-                    cliente.Close();
+                    
                 }
+                cliente.Close();
             }
             catch (SocketException e)
             {

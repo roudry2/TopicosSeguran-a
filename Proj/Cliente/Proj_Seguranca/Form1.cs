@@ -67,8 +67,7 @@ namespace Proj_Seguranca
                     responseData = Encoding.ASCII.GetString(data, 0, bytes);
 
 
-                    stream.Close();
-                    cliente.Close();
+                    
                 }
 
                 

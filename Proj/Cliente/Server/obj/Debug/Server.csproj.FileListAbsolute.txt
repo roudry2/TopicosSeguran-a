@@ -15,3 +15,9 @@ C:\Users\Miguel\Documents\GitHub\TopicosSeguran-a\TopicosSeguran-a\Proj\Cliente\
 C:\Users\Miguel\Documents\GitHub\TopicosSeguran-a\TopicosSeguran-a\Proj\Cliente\Server\bin\Debug\Server.exe
 C:\Users\Miguel\Documents\GitHub\TopicosSeguran-a\TopicosSeguran-a\Proj\Cliente\Server\bin\Debug\Server.pdb
 C:\Users\Miguel\Documents\GitHub\TopicosSeguran-a\TopicosSeguran-a\Proj\Cliente\Server\obj\Debug\Server.csprojResolveAssemblyReference.cache
+C:\Users\Eugénia Campos\Desktop\FDS\TopicosSeguran-a\Proj\Cliente\Server\bin\Debug\Server.exe.config
+C:\Users\Eugénia Campos\Desktop\FDS\TopicosSeguran-a\Proj\Cliente\Server\obj\Debug\Server.exe
+C:\Users\Eugénia Campos\Desktop\FDS\TopicosSeguran-a\Proj\Cliente\Server\obj\Debug\Server.pdb
+C:\Users\Eugénia Campos\Desktop\FDS\TopicosSeguran-a\Proj\Cliente\Server\bin\Debug\Server.exe
+C:\Users\Eugénia Campos\Desktop\FDS\TopicosSeguran-a\Proj\Cliente\Server\bin\Debug\Server.pdb
+C:\Users\Eugénia Campos\Desktop\FDS\TopicosSeguran-a\Proj\Cliente\Server\obj\Debug\Server.csprojResolveAssemblyReference.cache
