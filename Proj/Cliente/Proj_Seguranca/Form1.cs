@@ -46,7 +46,7 @@ namespace Proj_Seguranca
                 else
                 {
                     String message = txtNome.Text;
-
+                    panel_Status.BackColor = Color.Green;
 
 
                     int port = 1000;
@@ -56,7 +56,7 @@ namespace Proj_Seguranca
                     NetworkStream stream = cliente.GetStream();
 
                     stream.Write(data, 0, data.Length);
-                    MessageBox.Show("Enviado:" + message);
+                    MessageBox.Show("Conectado!!");
                     data = new Byte[256];
 
                     //String para guardar a resposta do ASCII
