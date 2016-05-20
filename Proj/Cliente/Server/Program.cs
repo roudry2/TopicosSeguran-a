@@ -17,7 +17,7 @@ namespace Server
             try
             {
                 int port = 1000;
-                IPAddress localAddr = IPAddress.Parse("172.22.216.237");
+                IPAddress localAddr = IPAddress.Parse("172.22.209.196");
                 server = new TcpListener(localAddr, port);
                 server.Start();
 
@@ -35,7 +35,7 @@ namespace Server
                 {
                     Console.Write("A espera de uma coneccao...");
                     Console.Clear();
-                    Console.WriteLine("Cliente: " + data + "Conectado!");
+                    Console.WriteLine("Cliente: " + data + " Conectado!");
                     
                     
 

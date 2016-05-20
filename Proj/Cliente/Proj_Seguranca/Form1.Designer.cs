@@ -44,6 +44,7 @@
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.txtChavePublica = new System.Windows.Forms.TextBox();
             this.button3 = new System.Windows.Forms.Button();
+            this.label4 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -92,7 +93,7 @@
             this.panel1.Controls.Add(this.button1);
             this.panel1.Controls.Add(this.lblStatus);
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Location = new System.Drawing.Point(607, 12);
+            this.panel1.Location = new System.Drawing.Point(633, 12);
             this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(299, 34);
@@ -121,7 +122,7 @@
             // 
             this.lbFicheiros.FormattingEnabled = true;
             this.lbFicheiros.ItemHeight = 16;
-            this.lbFicheiros.Location = new System.Drawing.Point(12, 12);
+            this.lbFicheiros.Location = new System.Drawing.Point(15, 42);
             this.lbFicheiros.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.lbFicheiros.Name = "lbFicheiros";
             this.lbFicheiros.Size = new System.Drawing.Size(149, 308);
@@ -129,7 +130,7 @@
             // 
             // txtNome
             // 
-            this.txtNome.Location = new System.Drawing.Point(667, 58);
+            this.txtNome.Location = new System.Drawing.Point(705, 50);
             this.txtNome.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtNome.Name = "txtNome";
             this.txtNome.Size = new System.Drawing.Size(163, 22);
@@ -138,7 +139,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(612, 62);
+            this.label2.Location = new System.Drawing.Point(650, 53);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(49, 17);
             this.label2.TabIndex = 5;
@@ -147,7 +148,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(836, 62);
+            this.label3.Location = new System.Drawing.Point(874, 53);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(49, 17);
             this.label3.TabIndex = 12;
@@ -155,7 +156,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(179, 10);
+            this.button2.Location = new System.Drawing.Point(221, 9);
             this.button2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(243, 27);
@@ -167,7 +168,7 @@
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.txtChavePrivada);
-            this.groupBox1.Location = new System.Drawing.Point(168, 43);
+            this.groupBox1.Location = new System.Drawing.Point(210, 42);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -179,7 +180,7 @@
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.txtChavePublica);
-            this.groupBox2.Location = new System.Drawing.Point(168, 182);
+            this.groupBox2.Location = new System.Drawing.Point(210, 181);
             this.groupBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -199,18 +200,29 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(679, 240);
+            this.button3.Location = new System.Drawing.Point(619, 233);
+            this.button3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
+            this.button3.Size = new System.Drawing.Size(157, 48);
             this.button3.TabIndex = 16;
-            this.button3.Text = "button3";
+            this.button3.Text = "Enviar chave publica para o servidor";
             this.button3.UseVisualStyleBackColor = true;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(12, 19);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(184, 17);
+            this.label4.TabIndex = 17;
+            this.label4.Text = "Lista de Ficheiros enviados:";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(944, 527);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
@@ -254,6 +266,7 @@
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.TextBox txtChavePublica;
         private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Label label4;
     }
 }
 
