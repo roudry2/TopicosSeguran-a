@@ -52,10 +52,10 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(102, 2);
-            this.button1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button1.Location = new System.Drawing.Point(240, 2);
+            this.button1.Margin = new System.Windows.Forms.Padding(2);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(119, 22);
+            this.button1.Size = new System.Drawing.Size(118, 22);
             this.button1.TabIndex = 0;
             this.button1.Text = "Conectar ao servidor";
             this.button1.UseVisualStyleBackColor = true;
@@ -64,7 +64,7 @@
             // txtChavePrivada
             // 
             this.txtChavePrivada.Location = new System.Drawing.Point(8, 18);
-            this.txtChavePrivada.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtChavePrivada.Margin = new System.Windows.Forms.Padding(2);
             this.txtChavePrivada.Multiline = true;
             this.txtChavePrivada.Name = "txtChavePrivada";
             this.txtChavePrivada.Size = new System.Drawing.Size(288, 77);
@@ -95,16 +95,19 @@
             this.panel1.Controls.Add(this.button1);
             this.panel1.Controls.Add(this.lblStatus);
             this.panel1.Controls.Add(this.label1);
+            this.panel1.Controls.Add(this.txtNome);
+            this.panel1.Controls.Add(this.label2);
+            this.panel1.Controls.Add(this.label3);
             this.panel1.Location = new System.Drawing.Point(455, 10);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(224, 28);
+            this.panel1.Size = new System.Drawing.Size(415, 28);
             this.panel1.TabIndex = 5;
             // 
             // btnEnviarFicheiro
             // 
             this.btnEnviarFicheiro.Location = new System.Drawing.Point(586, 308);
-            this.btnEnviarFicheiro.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnEnviarFicheiro.Margin = new System.Windows.Forms.Padding(2);
             this.btnEnviarFicheiro.Name = "btnEnviarFicheiro";
             this.btnEnviarFicheiro.Size = new System.Drawing.Size(88, 22);
             this.btnEnviarFicheiro.TabIndex = 8;
@@ -114,7 +117,7 @@
             // txtFicheiro
             // 
             this.txtFicheiro.Location = new System.Drawing.Point(228, 308);
-            this.txtFicheiro.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtFicheiro.Margin = new System.Windows.Forms.Padding(2);
             this.txtFicheiro.Multiline = true;
             this.txtFicheiro.Name = "txtFicheiro";
             this.txtFicheiro.Size = new System.Drawing.Size(355, 93);
@@ -123,7 +126,6 @@
             // lbFicheiros
             // 
             this.lbFicheiros.FormattingEnabled = true;
-            this.lbFicheiros.ItemHeight = 16;
             this.lbFicheiros.Location = new System.Drawing.Point(15, 42);
             this.lbFicheiros.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.lbFicheiros.Name = "lbFicheiros";
@@ -132,7 +134,7 @@
             // 
             // txtNome
             // 
-            this.txtNome.Location = new System.Drawing.Point(705, 50);
+            this.txtNome.Location = new System.Drawing.Point(112, 3);
             this.txtNome.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtNome.Name = "txtNome";
             this.txtNome.Size = new System.Drawing.Size(123, 20);
@@ -141,7 +143,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(650, 53);
+            this.label2.Location = new System.Drawing.Point(68, 6);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(38, 13);
             this.label2.TabIndex = 5;
@@ -150,7 +152,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(874, 53);
+            this.label3.Location = new System.Drawing.Point(363, 6);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(40, 13);
             this.label3.TabIndex = 12;
@@ -173,7 +175,7 @@
             this.groupBox1.Location = new System.Drawing.Point(210, 42);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(2);
             this.groupBox1.Size = new System.Drawing.Size(302, 108);
             this.groupBox1.TabIndex = 14;
             this.groupBox1.TabStop = false;
@@ -185,7 +187,7 @@
             this.groupBox2.Location = new System.Drawing.Point(210, 181);
             this.groupBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(2);
             this.groupBox2.Size = new System.Drawing.Size(302, 108);
             this.groupBox2.TabIndex = 15;
             this.groupBox2.TabStop = false;
@@ -194,7 +196,7 @@
             // txtChavePublica
             // 
             this.txtChavePublica.Location = new System.Drawing.Point(4, 20);
-            this.txtChavePublica.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtChavePublica.Margin = new System.Windows.Forms.Padding(2);
             this.txtChavePublica.Multiline = true;
             this.txtChavePublica.Name = "txtChavePublica";
             this.txtChavePublica.Size = new System.Drawing.Size(288, 77);
@@ -215,7 +217,7 @@
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(12, 19);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(184, 17);
+            this.label4.Size = new System.Drawing.Size(138, 13);
             this.label4.TabIndex = 17;
             this.label4.Text = "Lista de Ficheiros enviados:";
             // 
@@ -229,17 +231,13 @@
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.button2);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.txtNome);
             this.Controls.Add(this.lbFicheiros);
             this.Controls.Add(this.txtFicheiro);
             this.Controls.Add(this.btnEnviarFicheiro);
             this.Controls.Add(this.panel1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Form1";
             this.Text = "Form1";
-            this.Load += new System.EventHandler(this.Form1_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.groupBox1.ResumeLayout(false);

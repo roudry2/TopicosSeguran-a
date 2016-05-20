@@ -41,7 +41,7 @@ namespace Proj_Seguranca
             {
                 if (txtNome.Text == "")
                 {
-                    MessageBox.Show("Tem de preencher com  NOME");
+                    MessageBox.Show("Tem de preencher com  NOME","Atenção",MessageBoxButtons.OK,MessageBoxIcon.Information);
                 }
                 else
                 {
@@ -98,4 +98,4 @@ namespace Proj_Seguranca
 
     }
 }
-}
+
