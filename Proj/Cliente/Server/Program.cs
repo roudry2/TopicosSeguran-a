@@ -42,14 +42,14 @@ namespace Server
                 int i = stream.Read(bytes, 0, bytes.Length);
                 string data = Encoding.ASCII.GetString(bytes, 0, i);
                 stream.Write(bytes, 0, bytes.Length);
-
+                Console.Clear();
+                Console.WriteLine("Cliente: " + data);
 
                 //Loop para verificar a conecção
                 while (true)
                 {
                     
-                    Console.Clear();
-                    Console.WriteLine("Cliente: " + data);
+                    
                     
                     
 
