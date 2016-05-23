@@ -39,40 +39,47 @@ namespace Server
                 Console.Write("A espera de uma coneccao...");
                 TcpClient cliente = server.AcceptTcpClient();
                 NetworkStream stream = cliente.GetStream();
+
+
                 int i = stream.Read(bytes, 0, bytes.Length);
-                string data = Encoding.ASCII.GetString(bytes, 0, i);
+                string username = Encoding.ASCII.GetString(bytes, 0, i);
                 stream.Write(bytes, 0, bytes.Length);
                 Console.Clear();
-                Console.WriteLine("Cliente: " + data);
+                Console.WriteLine("Cliente: " + username + " conectado!!");
+
+
+                Byte[] bytes2 = new Byte[256];
+                int i2 = stream.Read(bytes2, 0, bytes2.Length);
+                string chave = Encoding.ASCII.GetString(bytes2, 0, i2);
+                stream.Write(bytes2, 0, bytes2.Length);
+                Console.WriteLine("\n\n Chave: " + chave);
+                
 
                 //Loop para verificar a conecção
                 while (true)
                 {
                     
-                    
-                    
-                    
-
                     //Loop para receber todos os dados enviados pelo cliente
                     while ((i = stream.Read(bytes, 0, bytes.Length)) != 0)
                     {
                         //traduzir os bytes para um string em ASCII
-                        data = Encoding.ASCII.GetString(bytes, 0, i);
+                        username = Encoding.ASCII.GetString(bytes, 0, i);
 
                         //Processar os dados enviados pelo cliente
-                        data = data.ToUpper();
+                        username = username.ToUpper();
 
-                        byte[] msg = Encoding.ASCII.GetBytes(data);
+                        byte[] msg = Encoding.ASCII.GetBytes(username);
 
                         //enviar uma resposta de volta
                         stream.Write(msg, 0, msg.Length);
-                        Console.WriteLine("Enviado: " + data.ToString());
+                        Console.WriteLine("Enviado: " + username.ToString());
 
 
                     }
                     
                 }
                 cliente.Close();
+
             }
             catch (SocketException e)
             {
