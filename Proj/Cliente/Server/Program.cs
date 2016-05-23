@@ -48,6 +48,11 @@ namespace Server
                 Console.WriteLine("Cliente: " + username + " conectado!!");
 
 
+                Byte[] bytes2 = new Byte[256];
+                int i2 = stream.Read(bytes2, 0, bytes2.Length);
+                string chave = Encoding.ASCII.GetString(bytes2, 0, i2);
+                stream.Write(bytes2, 0, bytes2.Length);
+                Console.WriteLine("\n\n Chave: " + chave);
                 
 
                 //Loop para verificar a conecção
@@ -57,13 +62,17 @@ namespace Server
                     //Loop para receber todos os dados enviados pelo cliente
                     while ((i = stream.Read(bytes, 0, bytes.Length)) != 0)
                     {
+                        //traduzir os bytes para um string em ASCII
+                        username = Encoding.ASCII.GetString(bytes, 0, i);
 
+                        //Processar os dados enviados pelo cliente
+                        username = username.ToUpper();
 
-                        Byte[] bytes2 = new Byte[256];
-                        int i2 = stream.Read(bytes2, 0, bytes2.Length);
-                        string chave = Encoding.ASCII.GetString(bytes2, 0, i2);
-                        stream.Write(bytes2, 0, bytes2.Length);
-                        Console.WriteLine("\n\n Chave: " + chave);
+                        byte[] msg = Encoding.ASCII.GetBytes(username);
+
+                        //enviar uma resposta de volta
+                        stream.Write(msg, 0, msg.Length);
+                        Console.WriteLine("Enviado: " + username.ToString());
 
 
                     }
