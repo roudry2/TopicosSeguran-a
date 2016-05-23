@@ -1,0 +1,31 @@
+C:\Users\Miguel\Desktop\IPLeiria\2º Semestre\Tópicos de Segurança\Proj\Cliente\Server\bin\Debug\Server.exe.config
+C:\Users\Miguel\Desktop\IPLeiria\2º Semestre\Tópicos de Segurança\Proj\Cliente\Server\bin\Debug\Server.exe
+C:\Users\Miguel\Desktop\IPLeiria\2º Semestre\Tópicos de Segurança\Proj\Cliente\Server\bin\Debug\Server.pdb
+C:\Users\Miguel\Desktop\IPLeiria\2º Semestre\Tópicos de Segurança\Proj\Cliente\Server\obj\Debug\Server.exe
+C:\Users\Miguel\Desktop\IPLeiria\2º Semestre\Tópicos de Segurança\Proj\Cliente\Server\obj\Debug\Server.pdb
+C:\Users\roudry2\Desktop\CTEsP\GIT\TopicosSeguran-a\Proj\Cliente\Server\bin\Debug\Server.exe.config
+C:\Users\roudry2\Desktop\CTEsP\GIT\TopicosSeguran-a\Proj\Cliente\Server\obj\Debug\Server.exe
+C:\Users\roudry2\Desktop\CTEsP\GIT\TopicosSeguran-a\Proj\Cliente\Server\obj\Debug\Server.pdb
+C:\Users\roudry2\Desktop\CTEsP\GIT\TopicosSeguran-a\Proj\Cliente\Server\bin\Debug\Server.exe
+C:\Users\roudry2\Desktop\CTEsP\GIT\TopicosSeguran-a\Proj\Cliente\Server\bin\Debug\Server.pdb
+C:\Users\roudry2\Desktop\CTEsP\GIT\TopicosSeguran-a\Proj\Cliente\Server\obj\Debug\Server.csprojResolveAssemblyReference.cache
+C:\Users\Miguel\Documents\GitHub\TopicosSeguran-a\TopicosSeguran-a\Proj\Cliente\Server\bin\Debug\Server.exe.config
+C:\Users\Miguel\Documents\GitHub\TopicosSeguran-a\TopicosSeguran-a\Proj\Cliente\Server\obj\Debug\Server.exe
+C:\Users\Miguel\Documents\GitHub\TopicosSeguran-a\TopicosSeguran-a\Proj\Cliente\Server\obj\Debug\Server.pdb
+C:\Users\Miguel\Documents\GitHub\TopicosSeguran-a\TopicosSeguran-a\Proj\Cliente\Server\bin\Debug\Server.exe
+C:\Users\Miguel\Documents\GitHub\TopicosSeguran-a\TopicosSeguran-a\Proj\Cliente\Server\bin\Debug\Server.pdb
+C:\Users\Miguel\Documents\GitHub\TopicosSeguran-a\TopicosSeguran-a\Proj\Cliente\Server\obj\Debug\Server.csprojResolveAssemblyReference.cache
+C:\Users\Eugénia Campos\Desktop\FDS\TopicosSeguran-a\Proj\Cliente\Server\bin\Debug\Server.exe.config
+C:\Users\Eugénia Campos\Desktop\FDS\TopicosSeguran-a\Proj\Cliente\Server\obj\Debug\Server.exe
+C:\Users\Eugénia Campos\Desktop\FDS\TopicosSeguran-a\Proj\Cliente\Server\obj\Debug\Server.pdb
+C:\Users\Eugénia Campos\Desktop\FDS\TopicosSeguran-a\Proj\Cliente\Server\bin\Debug\Server.exe
+C:\Users\Eugénia Campos\Desktop\FDS\TopicosSeguran-a\Proj\Cliente\Server\bin\Debug\Server.pdb
+C:\Users\Eugénia Campos\Desktop\FDS\TopicosSeguran-a\Proj\Cliente\Server\obj\Debug\Server.csprojResolveAssemblyReference.cache
+C:\Users\Miguel\Desktop\Cliente\Server\bin\Debug\Server.exe.config
+C:\Users\Miguel\Desktop\Cliente\Server\obj\Debug\Server.exe
+C:\Users\Miguel\Desktop\Cliente\Server\obj\Debug\Server.pdb
+C:\Users\Miguel\Desktop\Cliente\Server\bin\Debug\Server.exe
+C:\Users\Miguel\Desktop\Cliente\Server\bin\Debug\Server.pdb
+C:\Users\Miguel\Desktop\Cliente\Server\bin\Debug\ProtocolSI.dll
+C:\Users\Miguel\Desktop\Cliente\Server\bin\Debug\SymmetricsSI.dll
+C:\Users\Miguel\Desktop\Cliente\Server\obj\Debug\Server.csprojResolveAssemblyReference.cache
