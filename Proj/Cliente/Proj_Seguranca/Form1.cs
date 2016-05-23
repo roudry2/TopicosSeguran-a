@@ -1,4 +1,5 @@
-﻿using System;
+﻿using EI.SI;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -9,6 +10,7 @@ using System.Net;
 using System.Net.Sockets;
 using System.Security.Cryptography;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -17,23 +19,10 @@ namespace Proj_Seguranca
     public partial class Form1 : Form
     {
         public int flag = 0;
-        RSACryptoServiceProvider rsa;
 
         private static int port = 1000;
-        TcpClient cliente = new TcpClient(GetLocalIPAddress(), port);
 
-        public static string GetLocalIPAddress()
-        {
-            var host = Dns.GetHostEntry(Dns.GetHostName());
-            foreach (var ip in host.AddressList)
-            {
-                if (ip.AddressFamily == AddressFamily.InterNetwork)
-                {
-                    return ip.ToString();
-                }
-            }
-            throw new Exception("Local IP Address Not Found!");
-        }
+        RSACryptoServiceProvider rsa;
 
         public Form1()
         {
@@ -42,75 +31,75 @@ namespace Proj_Seguranca
 
         private void button1_Click(object sender, EventArgs e)
         {
+
             // Conectar
-            button1.Text = "Desconectar ao servidor";
-            try
+            button1.Text = "Desconectar";
+
+            if (flag == 0)
             {
-                if (flag == 0)
+                flag = 1;
+
+                if (txtNome.Text == "")
                 {
-
-                    flag = 1;
-                    if (txtNome.Text == "")
-                    {
-                        MessageBox.Show("Tem de preencher com  NOME", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    }
-                    else
-                    {
-                        String username = txtNome.Text;
-                        panel_Status.BackColor = Color.Green;
-
-                        Byte[] data = Encoding.ASCII.GetBytes(username);
-
-                        NetworkStream stream = cliente.GetStream();
-
-                        stream.Write(data, 0, data.Length);
-
-                        data = new Byte[256];
-
-                        //String para guardar a resposta do ASCII
-                        String responseData = String.Empty;
-
-                       /* //Ler a primeira resposta do TcpServer em bytes
-                        Int32 bytes = stream.Read(data, 0, data.Length);
-                        responseData = Encoding.ASCII.GetString(data, 0, bytes);*/
-
-                    }
-                }
-                else if (flag == 1)
-                {
-
-                    /*Desconectar */
-                    MessageBox.Show("Test");
-                    cliente.Close();
-
-
+                    MessageBox.Show("Tem de preencher com  NOME", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     button1.Text = "Conectar ao servidor";
-                    flag = 0;
                 }
-               
+                else
+                {
+                    String username = txtNome.Text;
+                    panel_Status.BackColor = Color.Green;
+
+                    MessageBox.Show("Cliente Conectado");
+                    button2.Enabled = true;
+                    button4.Enabled = true;
+                    btnEnviarFicheiro.Enabled = true;
+
+                    IPEndPoint endpoint = new IPEndPoint(IPAddress.Loopback, port);
+                    TcpClient client = new TcpClient();
+
+                    client.Connect(endpoint);
+                    ProtocolSI protocoloSI = new ProtocolSI();
+                    NetworkStream networkStream = client.GetStream();
+
+                    //Envia o nome pro server
+                    String data = txtNome.Text;
+                    byte[] nome = protocoloSI.Make(ProtocolSICmdType.DATA, data);
+                    networkStream.Write(nome, 0, nome.Length);
+                    
+                }
             }
-            catch (SocketException r)
+            else
             {
 
-                MessageBox.Show("Erro de Socket:", r.ToString());
+                MessageBox.Show("Client Disconnected");
+
+                button1.Text = "Conectar ao servidor";
+                flag = 0;
+                panel_Status.BackColor = Color.Red;
+                txtNome.Text = "";
+                button2.Enabled = false;
+                button4.Enabled = false;
+                btnEnviarFicheiro.Enabled = false;
+
             }
+
+            
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-
             rsa = new RSACryptoServiceProvider();
 
             String publickey = rsa.ToXmlString(false);
             String privatePublicPair = rsa.ToXmlString(true);
 
-            txtChavePrivada.Text = publickey;
-            txtChavePublica.Text = privatePublicPair;
+            txtChavePublica.Text = publickey;
+            txtBothKeys.Text = privatePublicPair;
+
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
-
             Stream myStream = null;
             OpenFileDialog openFileDialog1 = new OpenFileDialog();
 
@@ -127,71 +116,29 @@ namespace Proj_Seguranca
                     {
                         using (myStream)
                         {
-                            
 
+                            // -> Abrir o ficheiro (original)
+                            String caminho_original = openFileDialog1.InitialDirectory;
+                            FileStream ficheiro_original = File.OpenRead(caminho_original);
 
+                            // -> Criar ficheiro de destino
+                            if (File.Exists(caminho_destino))
+                            {
+                                File.Delete(caminho_destino);
+                            }
+                            FileStream ficheiro_destino = File.OpenWrite(caminho_destino);
 
                         }
                     }
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Error: Could not read file from disk. Original error: " + ex.Message);
+                    MessageBox.Show("Erro: " + ex.Message);
                 }
             }
+
         }
 
-        private void button5_Click(object sender, EventArgs e)
-        {
-
-            if (txtChavePrivada.Text == "")
-            {
-                MessageBox.Show("Tem de gerar as chaves primeiro", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-            else
-            {
-
-                // Encrypt
-                byte[] encodedData = Encoding.UTF8.GetBytes(tbSymmentricKey.Text);
-                byte[] encryptedData = rsa.Encrypt(encodedData, false);
-
-                tbSymmetricKeyEncrtypted.Text = Convert.ToBase64String(encryptedData);
-
-                Byte[] chave = Encoding.ASCII.GetBytes(tbSymmetricKeyEncrtypted.Text);
-
-                NetworkStream stream = cliente.GetStream();
-                stream.Write(chave, 0, chave.Length);
-
-                chave = new Byte[256];
-
-                //String para guardar a resposta do ASCII
-                String responseData = String.Empty;
-
-                //Ler a primeira resposta do TcpServer em bytes
-                Int32 bytes = stream.Read(chave, 0, chave.Length);
-                responseData = Encoding.ASCII.GetString(chave, 0, bytes);
-
-            }
-            
-        }
-
-        private void button6_Click(object sender, EventArgs e)
-        {
-            if (txtChavePrivada.Text == "")
-            {
-                MessageBox.Show("Tem de encriptar o texto primeiro", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-            }
-            else
-            {
-                // Decrypt
-                byte[] decodedData = Convert.FromBase64String(tbSymmetricKeyEncrtypted.Text);
-                byte[] decryptedData = rsa.Decrypt(decodedData, false);
-
-                tbSymmetricKeyDecrypted.Text = Encoding.UTF8.GetString(decryptedData);
-
-            }
-        }
 
     }
 }
