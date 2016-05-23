@@ -33,6 +33,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="ProtocolSI">
+      <HintPath>..\..\..\Downloads\Worksheet7\Libs\ProtocolSI.dll</HintPath>
+    </Reference>
+    <Reference Include="SymmetricsSI">
+      <HintPath>..\..\..\Downloads\Worksheet7\Libs\SymmetricsSI.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />

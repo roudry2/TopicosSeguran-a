@@ -1,102 +1,92 @@
-﻿using System;
+﻿using EI.SI;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Net.Sockets;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace Server
 {
     class Program
     {
-        public static string GetLocalIPAddress()
-        {
-            var host = Dns.GetHostEntry(Dns.GetHostName());
-            foreach (var ip in host.AddressList)
-            {
-                if (ip.AddressFamily == AddressFamily.InterNetwork)
-                {
-                    return ip.ToString();
-                }
-            }
-            throw new Exception("Local IP Address Not Found!");
-        }
+
+        private const int PORT = 1000;
+
         static void Main(string[] args)
         {
 
-            TcpListener server = null;
-            try
+            IPEndPoint endpoint = new IPEndPoint(IPAddress.Any, PORT);
+            TcpListener listener = new TcpListener(endpoint);
+            listener.Start();
+
+            Console.WriteLine("Server: -> Server Started" + Environment.NewLine);
+
+            int clientCounter = 0;
+
+            while (true)
             {
-                int port = 1000;
-                IPAddress localAddr = IPAddress.Parse(GetLocalIPAddress());
-                server = new TcpListener(localAddr, port);
-                server.Start();
+                TcpClient client = listener.AcceptTcpClient();
+                clientCounter++;
 
-                //Buffer para ler dados
-                Byte[] bytes = new Byte[256];
+                // cria o stream
+                NetworkStream networkStream = client.GetStream();
+                ProtocolSI protocoloSI = new ProtocolSI();
 
-                Console.Write("A espera de uma coneccao...");
-                TcpClient cliente = server.AcceptTcpClient();
-                NetworkStream stream = cliente.GetStream();
+                // Recebe o nome
+                byte[] nome = protocoloSI.Make(ProtocolSICmdType.ACK);
+                networkStream.Read(protocoloSI.Buffer, 0, protocoloSI.Buffer.Length);
 
-
-                int i = stream.Read(bytes, 0, bytes.Length);
-                string username = Encoding.ASCII.GetString(bytes, 0, i);
-                stream.Write(bytes, 0, bytes.Length);
-                Console.Clear();
-                Console.WriteLine("Cliente: " + username + " conectado!!");
-
-
-                Byte[] bytes2 = new Byte[256];
-                int i2 = stream.Read(bytes2, 0, bytes2.Length);
-                string chave = Encoding.ASCII.GetString(bytes2, 0, i2);
-                stream.Write(bytes2, 0, bytes2.Length);
-                Console.WriteLine("\n\n Chave: " + chave);
+                Console.WriteLine("Server: -> Client {0} - {1} Connected", protocoloSI.GetStringFromData(), clientCounter);
                 
-
-                //Loop para verificar a conecção
-                while (true)
-                {
-                    
-                    //Loop para receber todos os dados enviados pelo cliente
-                    while ((i = stream.Read(bytes, 0, bytes.Length)) != 0)
-                    {
-                        //traduzir os bytes para um string em ASCII
-                        username = Encoding.ASCII.GetString(bytes, 0, i);
-
-                        //Processar os dados enviados pelo cliente
-                        username = username.ToUpper();
-
-                        byte[] msg = Encoding.ASCII.GetBytes(username);
-
-                        //enviar uma resposta de volta
-                        stream.Write(msg, 0, msg.Length);
-                        Console.WriteLine("Enviado: " + username.ToString());
-
-
-                    }
-                    
-                }
-                cliente.Close();
+                ClientHandler handler = new ClientHandler(client, clientCounter);
+                handler.Handle();
 
             }
-            catch (SocketException e)
-            {
-                Console.WriteLine("Erro de Socket: ", e);
-                Console.ReadKey();
-            }
-            finally
-            {
-                //Parar o listening para os novos clientes
-                server.Stop();
-            }
-            Console.ReadKey();
-            Console.WriteLine("\nPressione 'Enter' para continuar...");
-            Console.Read();
-
-
 
         }
+
+        class ClientHandler
+        {
+            private TcpClient client;
+            private int clientID;
+
+            public ClientHandler(TcpClient client, int clientID)
+            {
+                this.client = client;
+                this.clientID = clientID;
+
+            }
+
+            public void Handle()
+            {
+                Thread tread = new Thread(threadHandler);
+                tread.Start();
+            }
+
+            private void threadHandler()
+            {
+                NetworkStream networkStream = this.client.GetStream();
+                ProtocolSI protocoloSI = new ProtocolSI();
+
+                networkStream.Read(protocoloSI.Buffer, 0, protocoloSI.Buffer.Length);
+                Console.WriteLine("Server: -> client {0} -- disconected", clientID);
+
+
+                
+
+
+
+                Console.WriteLine("Server: -> Ending Thread for client {0} ", clientID);
+
+            }
+
+        }
+
+
+
+
     }
 }
