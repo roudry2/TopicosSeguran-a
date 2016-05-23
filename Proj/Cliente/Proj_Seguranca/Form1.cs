@@ -16,7 +16,7 @@ namespace Proj_Seguranca
 {
     public partial class Form1 : Form
     {
-
+        public int flag = 0;
         RSACryptoServiceProvider rsa;
 
         private static int port = 1000;
@@ -43,33 +43,51 @@ namespace Proj_Seguranca
         private void button1_Click(object sender, EventArgs e)
         {
             // Conectar
+            button1.Text = "Desconectar ao servidor";
             try
             {
-                if (txtNome.Text == "")
+                if (flag == 0)
                 {
-                    MessageBox.Show("Tem de preencher com  NOME","Atenção",MessageBoxButtons.OK,MessageBoxIcon.Information);
+
+                    flag = 1;
+                    if (txtNome.Text == "")
+                    {
+                        MessageBox.Show("Tem de preencher com  NOME", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else
+                    {
+                        String username = txtNome.Text;
+                        panel_Status.BackColor = Color.Green;
+
+                        Byte[] data = Encoding.ASCII.GetBytes(username);
+
+                        NetworkStream stream = cliente.GetStream();
+
+                        stream.Write(data, 0, data.Length);
+
+                        data = new Byte[256];
+
+                        //String para guardar a resposta do ASCII
+                        String responseData = String.Empty;
+
+                       /* //Ler a primeira resposta do TcpServer em bytes
+                        Int32 bytes = stream.Read(data, 0, data.Length);
+                        responseData = Encoding.ASCII.GetString(data, 0, bytes);*/
+
+                    }
                 }
-                else
+                else if (flag == 1)
                 {
-                    String username = txtNome.Text;
-                    panel_Status.BackColor = Color.Green;
-                    
-                    Byte[] data = Encoding.ASCII.GetBytes(username);
 
-                    NetworkStream stream = cliente.GetStream();
+                    /*Desconectar */
+                    MessageBox.Show("Test");
+                    cliente.Close();
 
-                    stream.Write(data, 0, data.Length);
 
-                    data = new Byte[256];
-
-                    //String para guardar a resposta do ASCII
-                    String responseData = String.Empty;
-
-                    //Ler a primeira resposta do TcpServer em bytes
-                    Int32 bytes = stream.Read(data, 0, data.Length);
-                    responseData = Encoding.ASCII.GetString(data, 0, bytes);
-                    
+                    button1.Text = "Conectar ao servidor";
+                    flag = 0;
                 }
+               
             }
             catch (SocketException r)
             {

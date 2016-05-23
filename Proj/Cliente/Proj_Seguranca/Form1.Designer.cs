@@ -65,9 +65,9 @@
             // button1
             // 
             this.button1.Location = new System.Drawing.Point(67, 4);
-            this.button1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button1.Margin = new System.Windows.Forms.Padding(2);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(119, 22);
+            this.button1.Size = new System.Drawing.Size(155, 22);
             this.button1.TabIndex = 0;
             this.button1.Text = "Conectar ao servidor";
             this.button1.UseVisualStyleBackColor = true;
@@ -77,7 +77,7 @@
             // 
             this.txtChavePrivada.Enabled = false;
             this.txtChavePrivada.Location = new System.Drawing.Point(8, 18);
-            this.txtChavePrivada.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtChavePrivada.Margin = new System.Windows.Forms.Padding(2);
             this.txtChavePrivada.Multiline = true;
             this.txtChavePrivada.Name = "txtChavePrivada";
             this.txtChavePrivada.Size = new System.Drawing.Size(288, 77);
@@ -104,14 +104,14 @@
             this.panel1.Location = new System.Drawing.Point(195, 11);
             this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(425, 28);
+            this.panel1.Size = new System.Drawing.Size(464, 28);
             this.panel1.TabIndex = 5;
             // 
             // panel_Status
             // 
             this.panel_Status.BackColor = System.Drawing.Color.Red;
             this.panel_Status.Location = new System.Drawing.Point(50, 8);
-            this.panel_Status.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel_Status.Margin = new System.Windows.Forms.Padding(2);
             this.panel_Status.Name = "panel_Status";
             this.panel_Status.Size = new System.Drawing.Size(13, 14);
             this.panel_Status.TabIndex = 21;
@@ -119,7 +119,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(194, 8);
+            this.label2.Location = new System.Drawing.Point(227, 7);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(38, 13);
             this.label2.TabIndex = 5;
@@ -127,7 +127,7 @@
             // 
             // txtNome
             // 
-            this.txtNome.Location = new System.Drawing.Point(236, 6);
+            this.txtNome.Location = new System.Drawing.Point(271, 5);
             this.txtNome.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtNome.Name = "txtNome";
             this.txtNome.Size = new System.Drawing.Size(123, 20);
@@ -136,7 +136,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(364, 8);
+            this.label3.Location = new System.Drawing.Point(400, 9);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(40, 13);
             this.label3.TabIndex = 12;
@@ -145,7 +145,7 @@
             // btnEnviarFicheiro
             // 
             this.btnEnviarFicheiro.Location = new System.Drawing.Point(151, 220);
-            this.btnEnviarFicheiro.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnEnviarFicheiro.Margin = new System.Windows.Forms.Padding(2);
             this.btnEnviarFicheiro.Name = "btnEnviarFicheiro";
             this.btnEnviarFicheiro.Size = new System.Drawing.Size(85, 22);
             this.btnEnviarFicheiro.TabIndex = 8;
@@ -178,7 +178,7 @@
             this.groupBox1.Location = new System.Drawing.Point(10, 78);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(2);
             this.groupBox1.Size = new System.Drawing.Size(302, 108);
             this.groupBox1.TabIndex = 14;
             this.groupBox1.TabStop = false;
@@ -190,7 +190,7 @@
             this.groupBox2.Location = new System.Drawing.Point(10, 195);
             this.groupBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(2);
             this.groupBox2.Size = new System.Drawing.Size(302, 108);
             this.groupBox2.TabIndex = 15;
             this.groupBox2.TabStop = false;
@@ -199,7 +199,7 @@
             // txtChavePublica
             // 
             this.txtChavePublica.Location = new System.Drawing.Point(4, 20);
-            this.txtChavePublica.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtChavePublica.Margin = new System.Windows.Forms.Padding(2);
             this.txtChavePublica.Multiline = true;
             this.txtChavePublica.Name = "txtChavePublica";
             this.txtChavePublica.Size = new System.Drawing.Size(288, 77);
@@ -231,7 +231,7 @@
             // button4
             // 
             this.button4.Location = new System.Drawing.Point(8, 220);
-            this.button4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button4.Margin = new System.Windows.Forms.Padding(2);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(113, 22);
             this.button4.TabIndex = 19;
@@ -246,9 +246,9 @@
             this.groupBox3.Controls.Add(this.lbFicheiros);
             this.groupBox3.Controls.Add(this.btnEnviarFicheiro);
             this.groupBox3.Location = new System.Drawing.Point(328, 46);
-            this.groupBox3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox3.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox3.Padding = new System.Windows.Forms.Padding(2);
             this.groupBox3.Size = new System.Drawing.Size(243, 246);
             this.groupBox3.TabIndex = 20;
             this.groupBox3.TabStop = false;
@@ -260,7 +260,7 @@
             this.label5.Font = new System.Drawing.Font("Comic Sans MS", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.Location = new System.Drawing.Point(6, 9);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(157, 39);
+            this.label5.Size = new System.Drawing.Size(125, 30);
             this.label5.TabIndex = 22;
             this.label5.Text = "Client Side";
             // 
@@ -289,7 +289,7 @@
             this.label6.Location = new System.Drawing.Point(821, 193);
             this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(169, 17);
+            this.label6.Size = new System.Drawing.Size(127, 13);
             this.label6.TabIndex = 24;
             this.label6.Text = "Encrypted Symmetric Key";
             // 
@@ -299,7 +299,7 @@
             this.label7.Location = new System.Drawing.Point(821, 118);
             this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(39, 17);
+            this.label7.Size = new System.Drawing.Size(31, 13);
             this.label7.TabIndex = 20;
             this.label7.Text = "Text:";
             // 
@@ -309,7 +309,7 @@
             this.label8.Location = new System.Drawing.Point(821, 176);
             this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(107, 17);
+            this.label8.Size = new System.Drawing.Size(82, 13);
             this.label8.TabIndex = 26;
             this.label8.Text = "Encrypted Text:";
             // 
@@ -318,7 +318,7 @@
             this.tbSymmentricKey.Location = new System.Drawing.Point(863, 118);
             this.tbSymmentricKey.Margin = new System.Windows.Forms.Padding(4);
             this.tbSymmentricKey.Name = "tbSymmentricKey";
-            this.tbSymmentricKey.Size = new System.Drawing.Size(299, 22);
+            this.tbSymmentricKey.Size = new System.Drawing.Size(299, 20);
             this.tbSymmentricKey.TabIndex = 27;
             // 
             // tbSymmetricKeyDecrypted
@@ -326,7 +326,7 @@
             this.tbSymmetricKeyDecrypted.Location = new System.Drawing.Point(824, 361);
             this.tbSymmetricKeyDecrypted.Margin = new System.Windows.Forms.Padding(4);
             this.tbSymmetricKeyDecrypted.Name = "tbSymmetricKeyDecrypted";
-            this.tbSymmetricKeyDecrypted.Size = new System.Drawing.Size(299, 22);
+            this.tbSymmetricKeyDecrypted.Size = new System.Drawing.Size(299, 20);
             this.tbSymmetricKeyDecrypted.TabIndex = 28;
             // 
             // button6
@@ -359,7 +359,7 @@
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.panel1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Form1";
             this.Text = "Client Side";
             this.panel1.ResumeLayout(false);
